@@ -175,7 +175,7 @@
     type: looker_wordcloud
     fields: [intentdetails.count, intentdetails.trimmed20_intent]
     filters:
-      intentdetails.trimmed20_intent: -TR - main flow,-"Capture FirmID, Nam",-Escalation
+      intentdetails.trimmed20_intent: -"Default Fallback In",-Escalation
         Path,-ErrorCode Retry Flo,-Call Back Flow,-appreciation,-yes,-Yes,-greeting,-Anything
         Else
       intentdetails.created_date: 30 days
