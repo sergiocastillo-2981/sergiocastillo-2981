@@ -31,6 +31,12 @@ explore: session {
     sql_on: ${sessionhistory.correlationid} = ${intentdetails.correlationid} ;;
     relationship: one_to_many
   }
+
+  join: session_duration {
+    type:  left_outer
+    sql_on: ${session_duration.sessionid} = ${session.sessionid};;
+    relationship: many_to_one
+  }
 }
 
 explore: sessionhistory {
@@ -65,10 +71,10 @@ explore: cg_channel_config {
   }
 }
 
-explore: session_duration {
-  join: session {
-  type:  left_outer
-  sql_on: ${session_duration.sessionid} = ${session.sessionid};;
-  relationship: many_to_one
-  }
-}
+# explore: session_duration {
+#  join: session {
+#  type:  left_outer
+#  sql_on: ${session_duration.sessionid} = ${session.sessionid};;
+#  relationship: many_to_one
+#  }
+# }
