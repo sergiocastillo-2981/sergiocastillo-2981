@@ -75,6 +75,10 @@ view: intentdetails {
     sql: ${TABLE}."updatedAt" ;;
   }
 
+  measure: unique_intents  {
+    type: count_distinct
+    sql: ${sessionid} ;;
+  }
   measure: count {
     type: count
     drill_fields: [intentdetailid, session.agentname, session.clientsessionid, orchestrator.orchestratorid, intentdetails_report_v.count]
