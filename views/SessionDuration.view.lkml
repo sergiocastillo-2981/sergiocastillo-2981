@@ -34,6 +34,11 @@ view: session_duration {
     sql: ${TABLE}.sessionDurationSS ;;
   }
 
+  dimension: sessionid {
+    primary_key: yes
+    sql: ${TABLE}.sessionid ;;
+  }
+
 }
 
 
