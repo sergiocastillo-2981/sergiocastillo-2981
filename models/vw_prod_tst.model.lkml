@@ -64,3 +64,11 @@ explore: cg_channel_config {
     relationship: one_to_many
   }
 }
+
+explore: session_duration {
+  join: session {
+  type:  left_outer
+  sql_on: ${session_duration.sessionid} = ${session.sessionid};;
+  relationship: many_to_one
+  }
+}
