@@ -233,7 +233,7 @@ view: sessionhistory {
 
   measure: count_escalations {
     type: count_distinct
-    sql: ${sessionid} ;;
+    sql: ${TABLE}.sessionid ;;
     filters: [eventtype: "escalationConnected"]
 
   }
