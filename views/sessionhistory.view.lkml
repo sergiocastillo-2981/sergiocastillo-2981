@@ -231,6 +231,13 @@ view: sessionhistory {
     drill_fields: [detail*]
   }
 
+  measure: count_escalations {
+    type: count_distinct
+    sql: ${sessionid} ;;
+    filters: [eventtype: "escalationConnected"]
+
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
