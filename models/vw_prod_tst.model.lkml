@@ -42,7 +42,7 @@ explore: session {
 explore: sessionhistory {
   join: session {
     type: left_outer
-    sql_on: ${sessionhistory.sessionid} = ${session.clientsessionid} ;;
+    sql_on: ${sessionhistory.sessionid} = ${session.sessionid} ;;
     relationship: many_to_one
   }
 
