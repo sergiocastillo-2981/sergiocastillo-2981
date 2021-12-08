@@ -194,6 +194,13 @@ view: session {
   }
 
 
+  measure: count_ca_sessions {
+    type: count_distinct
+    sql: ${TABLE}.sessionid ;;
+    filters: [dwf_product: "CA"]
+
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
