@@ -201,6 +201,11 @@ view: session {
 
   }
 
+  measure: count_self_service {
+    type: number
+    sql: ${count_ca_sessions}-${sessionhistory.count_escalations} ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [detail*]
