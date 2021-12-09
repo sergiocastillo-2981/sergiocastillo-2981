@@ -238,6 +238,14 @@ view: sessionhistory {
 
   }
 
+
+  measure: percent_escalations {
+    type: number
+    sql: 1.0*${count_escalations}/nullif(${session.count_ca_sessions},0) ;;
+    value_format_name: percent_2
+  }
+
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
