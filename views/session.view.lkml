@@ -204,6 +204,12 @@ view: session {
     filters: [dwf_product: "CA"]
   }
 
+  measure: avg_ca_handle_time {
+    type: number
+    sql: 1.0*${sum_ca_handle_time} /${count_ca_sessions} ;;
+
+  }
+
   measure: count_ca_sessions {
     type: count_distinct
     sql: ${TABLE}.sessionid ;;
