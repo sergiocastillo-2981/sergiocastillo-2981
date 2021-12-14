@@ -195,7 +195,7 @@ view: session {
 
   dimension: handle_time {
     type: number
-    sql: floor(extract(EPOCH from  ss.sessionendedat-ss."createdAt")) ;;
+    sql: floor(extract(EPOCH from  sessionendedat-"createdAt")) ;;
   }
 
   measure: count_ca_sessions {
