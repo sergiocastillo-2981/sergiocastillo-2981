@@ -193,6 +193,10 @@ view: session {
     sql: ${TABLE}."within_business_hours" ;;
   }
 
+  dimension: handle_time {
+    type: number
+    sql: floor(extract(EPOCH from  ss.sessionendedat-ss."createdAt")) ;;
+  }
 
   measure: count_ca_sessions {
     type: count_distinct
@@ -200,6 +204,8 @@ view: session {
     filters: [dwf_product: "CA"]
 
   }
+
+
 
   measure: count_self_service {
     type: number
