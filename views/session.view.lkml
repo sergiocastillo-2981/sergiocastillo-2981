@@ -198,6 +198,12 @@ view: session {
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
   }
 
+  measure: sum_ca_handle_time {
+    type: sum
+    sql: ${handle_time} ;;
+    filters: [dwf_product: "CA"]
+  }
+
   measure: count_ca_sessions {
     type: count_distinct
     sql: ${TABLE}.sessionid ;;
