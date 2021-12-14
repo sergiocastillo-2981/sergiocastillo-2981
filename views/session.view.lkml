@@ -210,6 +210,13 @@ view: session {
 
   }
 
+  measure: avg_ca_handle_time_hms {
+    type: number
+    sql: (1.0*${sum_ca_handle_time} /${count_ca_sessions})/86400.0 ;;
+    value_format: "HH:MM:SS"
+
+  }
+
   measure: count_ca_sessions {
     type: count_distinct
     sql: ${TABLE}.sessionid ;;
