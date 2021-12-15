@@ -224,6 +224,11 @@ view: session {
 
   }
 
+  measure: count_escalations_ss {
+    type: count
+    filters: [dwf_product: "CA",escalationreason: "-NULL"]
+  }
+
 
 
   measure: count_self_service {
