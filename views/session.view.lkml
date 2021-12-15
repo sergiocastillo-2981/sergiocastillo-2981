@@ -225,12 +225,6 @@ view: session {
   }
 
 
-  measure: count_ss_escalations {
-    type: count_distinct
-    sql:${TABLE}.escalationreason ;;
-    filters: [dwf_product: "CA"]
-
-  }
 
   measure: count_self_service {
     type: number
