@@ -240,7 +240,7 @@ view: sessionhistory {
 
   measure: count_engagements {
     type: count_distinct
-    sql: ${sessionid} ;;
+    sql: ${session.sessionid} ;;
     filters: [session.dwf_product: "CA"]
   }
 
