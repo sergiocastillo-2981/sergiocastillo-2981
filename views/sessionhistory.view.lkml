@@ -238,6 +238,11 @@ view: sessionhistory {
 
   }
 
+  measure: count_engagements {
+    type: count_distinct
+    sql: ${sessionid} ;;
+  }
+
 
   measure: percent_escalations {
     type: number
