@@ -230,10 +230,17 @@ view: session {
   }
 
 
-
   measure: count_self_service {
     type: number
     sql: ${count_ca_sessions}-${sessionhistory.count_escalations} ;;
+  }
+
+
+
+  measure: percent_escalations_ss {
+    type: number
+    sql: 1.0*${count_escalations_ss}/nullif(${count_ca_sessions},0) ;;
+    value_format_name: percent_2
   }
 
   measure: percent_self_service {
