@@ -32,11 +32,7 @@ explore: session {
     relationship: one_to_many
   }
 
-  join: session_duration {
-    type:  left_outer
-    sql_on: ${session_duration.sessionid} = ${session.sessionid};;
-    relationship: many_to_one
-  }
+
 }
 
 explore: sessionhistory {
