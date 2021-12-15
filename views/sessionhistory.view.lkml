@@ -231,12 +231,11 @@ view: sessionhistory {
     drill_fields: [detail*]
   }
 
-  measure: count_escalations {
-    type: count_distinct
-    sql: ${TABLE}.sessionid ;;
-    filters: [eventtype: "escalationConnected"]
-
-  }
+  #measure: count_escalations {
+  #  type: count_distinct
+  #  sql: ${TABLE}.sessionid ;;
+  #  filters: [eventtype: "escalationConnected"]
+  #}
 
   measure: count_engagements {
     type: count_distinct
@@ -245,11 +244,11 @@ view: sessionhistory {
   }
 
 
-  measure: percent_escalations {
-    type: number
-    sql: 1.0*${count_escalations}/nullif(${session.count_ca_sessions},0) ;;
-    value_format_name: percent_2
-  }
+  #measure: percent_escalations {
+  #  type: number
+  #  sql: 1.0*${count_escalations}/nullif(${session.count_ca_sessions},0) ;;
+  #  value_format_name: percent_2
+  #}
 
 
   # ----- Sets of fields for drilling ------

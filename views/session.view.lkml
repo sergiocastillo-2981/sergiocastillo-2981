@@ -232,7 +232,7 @@ view: session {
 
   measure: count_self_service {
     type: number
-    sql: ${count_ca_sessions}-${sessionhistory.count_escalations} ;;
+    sql: ${count_ca_sessions}-${count_escalations_ss} ;;
   }
 
 
