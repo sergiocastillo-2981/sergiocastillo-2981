@@ -231,11 +231,7 @@ view: sessionhistory {
     drill_fields: [detail*]
   }
 
-  #measure: count_escalations {
-  #  type: count_distinct
-  #  sql: ${TABLE}.sessionid ;;
-  #  filters: [eventtype: "escalationConnected"]
-  #}
+ ##--Sergios Added Measures and Dimensions
 
   measure: count_engagements {
     type: count_distinct
@@ -243,6 +239,16 @@ view: sessionhistory {
     filters: [session.dwf_product: "CA"]
   }
 
+  dimension: source_url {
+    type: string
+    sql: (${data}->'userMeta')->>'origin' ;;
+  }
+
+ #measure: count_escalations {
+  #  type: count_distinct
+  #  sql: ${TABLE}.sessionid ;;
+  #  filters: [eventtype: "escalationConnected"]
+  #}
 
   #measure: percent_escalations {
   #  type: number

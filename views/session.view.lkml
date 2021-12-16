@@ -193,6 +193,7 @@ view: session {
     sql: ${TABLE}."within_business_hours" ;;
   }
 
+##---- Sergio Added Dimensions and Measures
   dimension: handle_time {
     type: number
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
