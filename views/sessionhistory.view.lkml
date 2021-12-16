@@ -244,6 +244,16 @@ view: sessionhistory {
     sql: (${data}->'userMeta')->>'origin' ;;
   }
 
+  dimension: user_returning {
+    type: string
+    sql: ((${data}->'commonContext')->'user.returning')->>'value'  ;;
+  }
+
+  dimension: referrer {
+    type: string
+    sql:  (${data}->'userMeta')->>'referrer' ;;
+  }
+
  #measure: count_escalations {
   #  type: count_distinct
   #  sql: ${TABLE}.sessionid ;;
