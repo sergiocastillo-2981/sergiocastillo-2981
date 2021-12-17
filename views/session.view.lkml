@@ -34,39 +34,6 @@ view: session {
   }
 
 
-  dimension: brand {
-
-    case: {
-      when: {
-        sql: ${TABLE}.channelid = 'd99d7d02-2271-4435-b7b5-3cc3045901c0' ;;
-        label: "PC"
-      }
-      when: {
-        sql: ${TABLE}.channelid = 'd0fc6f88-7cc6-42b4-a40c-3a86d45ac73a' ;;
-        label: "CV"
-      }
-      when: {
-        sql: ${TABLE}.channelid = '791be684-d6d8-4e90-bce5-6a68efd0223e';;
-        label: "CUPRA"
-      }
-      when: {
-        sql: ${TABLE}.channelid = '8de83e63-c1d3-4c0e-b593-13942da49fdc' ;;
-        label: "SEAT"
-      }
-      when: {
-        sql: ${TABLE}.channelid = '49d2d7c6-c1a0-4576-86bd-d0a9bc013dca' ;;
-        label: "SKODA"
-      }
-
-      when: {
-        sql: ${TABLE}.channelid = 'e6eaa2b1-ca11-466c-83c8-ac65b9b7e625' ;;
-        label: "AUDI"
-      }
-      else: "UNKNOWN"
-    }
-
-  }
-
   dimension: channeltype {
     type: string
     sql: ${TABLE}."channeltype" ;;
@@ -194,6 +161,40 @@ view: session {
   }
 
 ##---- Sergio Added Dimensions and Measures
+
+  dimension: brand {
+
+    case: {
+      when: {
+        sql: ${TABLE}.channelid = 'd99d7d02-2271-4435-b7b5-3cc3045901c0' ;;
+        label: "PC"
+      }
+      when: {
+        sql: ${TABLE}.channelid = 'd0fc6f88-7cc6-42b4-a40c-3a86d45ac73a' ;;
+        label: "CV"
+      }
+      when: {
+        sql: ${TABLE}.channelid = '791be684-d6d8-4e90-bce5-6a68efd0223e';;
+        label: "CUPRA"
+      }
+      when: {
+        sql: ${TABLE}.channelid = '8de83e63-c1d3-4c0e-b593-13942da49fdc' ;;
+        label: "SEAT"
+      }
+      when: {
+        sql: ${TABLE}.channelid = '49d2d7c6-c1a0-4576-86bd-d0a9bc013dca' ;;
+        label: "SKODA"
+      }
+
+      when: {
+        sql: ${TABLE}.channelid = 'e6eaa2b1-ca11-466c-83c8-ac65b9b7e625' ;;
+        label: "AUDI"
+      }
+      else: "UNKNOWN"
+    }
+
+  }
+
   dimension: handle_time {
     type: number
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
