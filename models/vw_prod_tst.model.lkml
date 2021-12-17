@@ -32,7 +32,11 @@ explore: session {
     relationship: one_to_many
   }
 
-
+  join: surveyresult {
+    type: left_outer
+    sql_on: ${session.sessionid} = ${surveyresult.sessionid} ;;
+    relationship: one_to_one
+  }
 }
 
 explore: sessionhistory {
