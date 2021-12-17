@@ -54,7 +54,7 @@ view: surveyresult {
 
   dimension: csat {
     type: number
-    sql: result->'rating' ;;
+    sql: ${TABLE}.result->'rating' ;;
   }
 
   measure: count {
