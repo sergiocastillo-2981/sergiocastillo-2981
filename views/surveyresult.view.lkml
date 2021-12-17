@@ -52,6 +52,11 @@ view: surveyresult {
     sql: ${TABLE}."updatedat" ;;
   }
 
+  dimension: csat {
+    type: number
+    sql: result->'rating' ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, session.agentname, session.clientsessionid]
