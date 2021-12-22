@@ -236,7 +236,7 @@ view: sessionhistory {
   measure: count_engagements {
     type: count_distinct
     sql: ${sessionid} ;;
-    filters: [session.dwf_product: "CA"]
+    filters: [session.dwf_product: "CA",partytype: "customer",messagetext: "-Hi"]
   }
 
   dimension: source_url {
