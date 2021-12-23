@@ -204,8 +204,10 @@ view: session {
   dimension_group: handle {
     type: duration
     intervals: [second,minute,hour,day]
-    sql_start: ${TABLE}."createdAt" ;;
-    sql_end: ${TABLE}.sessionendedat ;;
+    #sql_start: ${TABLE}."createdAt" ;;
+    sql_start: ${created_raw} ;;
+    #sql_end: ${TABLE}.sessionendedat ;;
+    sql_end: ${sessionendedat_raw} ;;
   }
 
   measure: sum_ca_handle_time {
@@ -229,7 +231,7 @@ view: session {
 
   measure: count_ca_sessions {
     type: count_distinct
-    sql: ${TABLE}.sessionid ;;
+    sql: ${sessionid} ;;
     filters: [dwf_product: "CA"]
 
   }
