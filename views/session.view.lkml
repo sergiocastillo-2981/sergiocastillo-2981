@@ -200,6 +200,13 @@ view: session {
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
   }
 
+  dimension_group: handle {
+    type: duration
+    intervals: [second,minute,hour,day]
+    sql_start: ${TABLE}.createdAt ;;
+    sql_end: ${TABLE}.sessionendedat ;;
+  }
+
   measure: sum_ca_handle_time {
     type: sum
     sql: ${handle_time} ;;
