@@ -203,7 +203,7 @@ view: session {
   dimension_group: handle {
     type: duration
     intervals: [second,minute,hour,day]
-    sql_start: ${TABLE}.createdAt ;;
+    sql_start: ${TABLE}."createdAt" ;;
     sql_end: ${TABLE}.sessionendedat ;;
   }
 
