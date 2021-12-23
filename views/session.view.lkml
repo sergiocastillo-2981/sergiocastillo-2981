@@ -200,6 +200,7 @@ view: session {
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
   }
 
+  #This dimension can be used to replace_handle_time, its more powerful and versatile, also can be displayed in multiple formats.
   dimension_group: handle {
     type: duration
     intervals: [second,minute,hour,day]
