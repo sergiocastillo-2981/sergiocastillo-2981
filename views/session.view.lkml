@@ -257,7 +257,7 @@ view: session {
 
   measure: percent_self_service {
     type: number
-    sql: 1.0*${count_self_service}/nullif(${count_ca_sessions},0) ;;
+    sql: 1.0*${count_self_service}/nullif(${sessionhistory.count_engagements},0) ;;
     value_format_name: percent_2
   }
 
