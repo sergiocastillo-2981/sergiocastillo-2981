@@ -236,7 +236,7 @@ view: session {
 
   }
 
-  measure: count_escalations_ss {
+  measure: count_escalations {
     type: count
     filters: [dwf_product: "CA",escalationreason: "-NULL"]
   }
@@ -244,14 +244,14 @@ view: session {
 
   measure: count_self_service {
     type: number
-    sql: ${count_ca_sessions}-${count_escalations_ss} ;;
+    sql: ${sessionhistory.count_engagements}-${count_escalations} ;;
   }
 
 
 
-  measure: percent_escalations_ss {
+  measure: percent_escalations {
     type: number
-    sql: 1.0*${count_escalations_ss}/nullif(${count_ca_sessions},0) ;;
+    sql: 1.0*${count_escalations}/nullif(${sessionhistory.count_engagements},0) ;;
     value_format_name: percent_2
   }
 
