@@ -39,6 +39,14 @@ explore: session {
   }
 }
 
+explore: rating {
+  join: orchestrator {
+    type: left_outer
+    sql_on: ${rating.correlationid} = ${orchestrator.correlationid} ;;
+    relationship: one_to_one
+  }
+}
+
 explore: sessionhistory {
   join: session {
     type: left_outer

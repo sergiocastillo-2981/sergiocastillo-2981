@@ -239,6 +239,14 @@ view: sessionhistory {
     filters: [session.dwf_product: "CA",partytype: "customer",messagetext: "-Hi"]
   }
 
+  measure: new_count_engagements {
+    type: count_distinct
+    sql:  CASE WHEN ${session.dwf_product} = 'CA' and ${partytype} = 'customer' and messagetext<>'Hi'
+    THEN ${session.sessionid}
+    ELSE NULL
+    END ;;
+  }
+
   dimension: source_url {
     type: string
     sql: (${data}->'userMeta')->>'origin' ;;
