@@ -233,13 +233,13 @@ view: sessionhistory {
 
  ##--Sergios Added Measures and Dimensions
 
-  measure: count_engagements {
-    type: count_distinct
-    sql: ${sessionid} ;;
-    filters: [session.dwf_product: "CA",partytype: "customer",messagetext: "-Hi"]
-  }
+##  measure: count_engagements {
+##    type: count_distinct
+##    sql: ${sessionid} ;;
+##    filters: [session.dwf_product: "CA",partytype: "customer",messagetext: "-Hi"]
+##  }
 
-  measure: new_count_engagements {
+  measure: count_engagements {
     type: count_distinct
     sql:  CASE WHEN ${session.dwf_product} = 'CA' and ${partytype} = 'customer' and messagetext<>'Hi'
     THEN ${session.sessionid}
