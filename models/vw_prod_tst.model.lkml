@@ -28,7 +28,7 @@ explore: session {
   join: intentdetails {
     type: left_outer
     sql_on: ${sessionhistory.correlationid} = ${intentdetails.correlationid} ;;
-    relationship: one_to_many
+    relationship: many_to_one
   }
 
   join: surveyresult {
