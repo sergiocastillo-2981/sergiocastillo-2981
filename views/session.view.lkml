@@ -160,7 +160,8 @@ view: session {
     sql: ${TABLE}."within_business_hours" ;;
   }
 
-##---- Sergio Added Dimensions and Measures
+##---- Sergio Added Dimensions and Measures  -----------#####
+##----                                       -----------#####
 
   dimension: brand {
 
@@ -244,6 +245,12 @@ view: session {
   measure: count_escalations {
     type: count
     filters: [dwf_product: "CA",escalationreason: "-NULL"]
+  }
+
+  measure: per_bot_sessions_contained {
+    type: number
+    value_format_name: "percent_2"
+    sql: 1.0 * ${count_escalations} / ${count_ca_sessions}  ;;
   }
 
 
