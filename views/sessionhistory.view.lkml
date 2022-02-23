@@ -247,11 +247,15 @@ view: sessionhistory {
     END ;;
   }
 
-  measure: ca_user_messages {
+  measure: count_ca_user_messages {
     type: count
     filters: [session.dwf_product: "CA",partytype: "customer",eventtype: "messageReceived"]
   }
 
+  measure: count_ca_messages {
+    type: count
+    filters: [session.dwf_product: "CA",partytype: "customer,agent,bot"]
+  }
   dimension: source_url {
     type: string
     sql: (${data}->'userMeta')->>'origin' ;;

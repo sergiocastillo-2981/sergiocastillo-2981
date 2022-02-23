@@ -12,7 +12,6 @@ datagroup: vw_prod_tst_default_datagroup {
 persist_with: vw_prod_tst_default_datagroup
 
 
-
 explore: session {
   join: device {
     type: left_outer
