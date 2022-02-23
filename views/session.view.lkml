@@ -249,8 +249,8 @@ view: session {
 
   measure: per_bot_sessions_contained {
     type: number
-    value_format_name: "percent_2"
-    sql: 1.0 * ${count_escalations} / ${count_ca_sessions}  ;;
+    value_format_name: percent_2
+    sql: 1.0 * ${count_escalations} / nullif(${count_ca_sessions},0)  ;;
   }
 
 

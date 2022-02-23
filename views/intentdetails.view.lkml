@@ -80,6 +80,16 @@ view: intentdetails {
     sql: ${sessionid} ;;
   }
 
+ measure: ca_intents_per_call {
+   type: number
+   sql: 1.0*${count_ca_intents} / nullif(${session.count_ca_sessions},0);;
+
+ }
+
+ measure: count_ca_intents {
+   type: count
+  filters: [session.dwf_product: "CA"]
+ }
 
   measure: count {
     type: count
