@@ -83,6 +83,7 @@ view: intentdetails {
  measure: ca_intents_per_call {
    type: number
    sql: 1.0*${count_ca_intents} / nullif(${session.count_ca_sessions},0);;
+   value_format: "0.##"
 
  }
 
