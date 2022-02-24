@@ -256,6 +256,15 @@ view: sessionhistory {
     type: count
     filters: [session.dwf_product: "CA",partytype: "customer,agent,bot"]
   }
+
+  measure: avg_ca_messages {
+    type: number
+    sql: 1.0*${count_ca_messages} / nullif( ${session.count_ca_sessions} ,0) ;;
+
+  }
+
+
+
   dimension: source_url {
     type: string
     sql: (${data}->'userMeta')->>'origin' ;;

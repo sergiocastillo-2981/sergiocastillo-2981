@@ -237,10 +237,7 @@ view: session {
 
   }
 
-  measure: avg_count_messages {
-    type: number
-    sql: 1.0*${sessionhistory.count_ca_messages} / ${count_ca_sessions}  ;;
-  }
+
 
   measure: count_escalations {
     type: count
