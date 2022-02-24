@@ -260,6 +260,7 @@ view: sessionhistory {
   measure: avg_ca_messages {
     type: number
     sql: 1.0*${count_ca_messages} / nullif( ${session.count_ca_sessions} ,0) ;;
+    value_format: "0.##"
 
   }
 
