@@ -1,5 +1,5 @@
 - dashboard: test_vw
-  title: DWF Operational Stats - VW
+  title: DWF Operational Stats
   layout: newspaper
   preferred_viewer: dashboards-next
   elements:

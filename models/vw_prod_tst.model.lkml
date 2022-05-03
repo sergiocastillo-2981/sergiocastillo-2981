@@ -11,8 +11,14 @@ datagroup: vw_prod_tst_default_datagroup {
 
 persist_with: vw_prod_tst_default_datagroup
 
+access_grant: can_see_business_hours{
+  user_attribute: department
+  allowed_values: ["reporting_mgmt"] ##only users with department=reporting_mgmt will have access
+}
+
 
 explore: session {
+  view_name: session
   join: device {
     type: left_outer
     sql_on: ${session.deviceid} = ${device.deviceid} ;;
@@ -37,6 +43,19 @@ explore: session {
     relationship: one_to_one
   }
 }
+
+
+explore: my_ext_exp {
+  extends: [session]
+  #view_label: "Sessions Skoda"
+
+  access_filter: {
+    field: session.brand
+    user_attribute: department
+  }
+
+}
+
 
 explore: rating {
   join: orchestrator {

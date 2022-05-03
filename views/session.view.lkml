@@ -155,13 +155,17 @@ view: session {
     sql: ${TABLE}."updatedAt" ;;
   }
 
+
+
   dimension: within_business_hours {
     type: yesno
     sql: ${TABLE}."within_business_hours" ;;
+    required_access_grants: [can_see_business_hours] ##Added for testing purposes
   }
 
-##---- Sergio Added Dimensions and Measures  -----------#####
+##---- Sergio Added Dimensions ,Measures  -----------#####
 ##----                                       -----------#####
+
 
   dimension: brand {
 
@@ -200,6 +204,8 @@ view: session {
     type: number
     sql: coalesce(floor(extract(EPOCH from  sessionendedat-"createdAt")),0) ;;
   }
+
+  #pending create handle_time using DATEDIFF
 
   #This dimension can be used to replace_handle_time, its more powerful and versatile, also can be displayed in multiple formats.
   dimension_group: handle {
