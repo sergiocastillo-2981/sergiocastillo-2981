@@ -1,4 +1,7 @@
-connection: "vw_eu_prod_surrey"
+#connection: "vw_eu_prod_surrey"
+
+#new connection
+connection: "dwf_vw_prod_gcp"
 
 # include all the views
 include: "/views/**/*.view"
@@ -11,6 +14,7 @@ datagroup: vw_prod_tst_default_datagroup {
 
 persist_with: vw_prod_tst_default_datagroup
 
+#This is a sample on how to use access_grant.SC
 access_grant: can_see_business_hours{
   user_attribute: department
   allowed_values: ["reporting_mgmt"] ##only users with department=reporting_mgmt will have access
