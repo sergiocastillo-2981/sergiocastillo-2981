@@ -171,27 +171,27 @@ view: session {
 
     case: {
       when: {
-        sql: ${TABLE}.channelid = 'd99d7d02-2271-4435-b7b5-3cc3045901c0' ;;
+        sql: ${TABLE}.channelid = '16ae3b75-cd57-4fa7-ba1f-2fc21f17688a' ;;
         label: "PC"
       }
       when: {
-        sql: ${TABLE}.channelid = 'd0fc6f88-7cc6-42b4-a40c-3a86d45ac73a' ;;
+        sql: ${TABLE}.channelid = 'ec542df8-78e6-4a77-99b5-972bb316f153' ;;
         label: "CV"
       }
       when: {
-        sql: ${TABLE}.channelid = '791be684-d6d8-4e90-bce5-6a68efd0223e';;
+        sql: ${TABLE}.channelid = '9ce2abef-6c70-4960-ad70-f210e9edc0a3';;
         label: "CUPRA"
       }
       when: {
-        sql: ${TABLE}.channelid = '8de83e63-c1d3-4c0e-b593-13942da49fdc' ;;
+        sql: ${TABLE}.channelid = '5544c829-8496-440f-a604-213a1630f1ee' ;;
         label: "SEAT"
       }
       when: {
-        sql: ${TABLE}.channelid = '49d2d7c6-c1a0-4576-86bd-d0a9bc013dca' ;;
+        sql: ${TABLE}.channelid = '83ff2ed8-ea89-4a00-a697-85f21fbd7d8c' ;;
         label: "SKODA"
       }
       when: {
-        sql: ${TABLE}.channelid = 'e6eaa2b1-ca11-466c-83c8-ac65b9b7e625' ;;
+        sql: ${TABLE}.channelid = 'b0adbb4f-1e79-4993-86d0-093e8973bbbe' ;;
         label: "AUDI"
       }
       else: "UNKNOWN"
